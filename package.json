@@ -19,6 +19,7 @@
         "prettier": "^2.5.1",
         "typescript": "^4.5.4",
         "vite": "^2.8.0",
+        "vite-plugin-cdn-import": "^0.3.5",
         "vite-plugin-compression": "^0.5.1",
         "vue-tsc": "^0.29.8"
     }

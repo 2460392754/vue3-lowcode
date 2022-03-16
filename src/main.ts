@@ -3,7 +3,6 @@ import * as Vue from 'vue';
 import App from './App.vue';
 // ===
 import ElementPlus, { ElMessage } from 'element-plus';
-import 'element-plus/dist/index.css';
 // ===
 import * as ElementIcons from '@element-plus/icons-vue';
 // ===
