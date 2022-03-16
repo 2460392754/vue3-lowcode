@@ -11,7 +11,7 @@ import { defineComponent, ref } from 'vue';
 import RegisterComponent from './registerComponent';
 import Download from './download.vue';
 import Upload from './upload.vue';
-import Demo from '@/assets/dynamic.json';
+// import Demo from '@/assets/dynamic.json';
 
 export default defineComponent({
     components: {
@@ -23,7 +23,7 @@ export default defineComponent({
     setup() {
         const json = ref(null);
 
-        json.value = Demo;
+        // json.value = Demo;
 
         /**
          * 上传成功

@@ -1,7 +1,7 @@
 {
     "name": "vue3-ts-vite-low-code",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.0.1",
     "scripts": {
         "dev": "vite --host",
         "build": "vue-tsc --noEmit && vite build",
@@ -19,6 +19,7 @@
         "prettier": "^2.5.1",
         "typescript": "^4.5.4",
         "vite": "^2.8.0",
+        "vite-plugin-compression": "^0.5.1",
         "vue-tsc": "^0.29.8"
     }
 }

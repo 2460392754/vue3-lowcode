@@ -1,5 +1,4 @@
-import { h, reactive, ref } from 'vue';
-import * as Vue from 'vue';
+import { h } from 'vue';
 import ElementConfig from '@/lowCode/elementConfig';
 
 export interface JsonData {
@@ -49,7 +48,7 @@ export function handleRenderEl(
     id: number
 ) {
     // 处理 空数据
-    if (node === null) return;
+    if (typeof jsonData.node === 'undefined') return;
 
     let renderList;
 
@@ -248,7 +247,7 @@ function handleElRefBind(tempProps: AnyObj, jsonData: JsonData) {
  */
 function handleParseJsonPathMatch(jsonData: JsonData, matchPath: string) {
     if (!hasJsonPathMatch(matchPath)) {
-        console.error(matchPath)
+        console.error(matchPath);
         throw new TypeError('json解析属性错误');
     }
 

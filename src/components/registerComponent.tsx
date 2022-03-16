@@ -7,7 +7,7 @@ const reactiveVal = reactive<string[]>([]);
 export default defineComponent({
     props: {
         data: {
-            type: Object as PropType<JsonData>,
+            type: [Object, null] as PropType<JsonData | null>,
             required: true
         }
     },
@@ -33,12 +33,10 @@ export default defineComponent({
                 };
             }
         }
- 
-        watchEffect(() => {
-            init(jsonData, props.data);
-        });
 
-        // init(jsonData, props.data);
+        watchEffect(() => {
+            props.data !== null && init(jsonData, props.data);
+        });
 
         return () => handleRenderEl(jsonData.node, jsonData, reactiveVal, 0);
 
