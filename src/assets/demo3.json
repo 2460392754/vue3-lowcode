@@ -1,0 +1,36 @@
+{
+    "node": {
+        "type": "ElCard",
+        "props": {},
+        "children": {
+            "default": [
+                {
+                    "type": "ElButton",
+                    "props": {
+                        "type": "primary"
+                    },
+                    "children": { "default": "控制台输出json绑定的事件信息" }
+                },
+                {
+                    "type": "ElButton",
+                    "props": { "type": "primary", "onClick": "onAddTag" },
+                    "children": { "default": "动态生成tag标签" }
+                },
+                {
+                    "type": "ElInput",
+                    "props": {
+                        "placeholder": "这是输入框",
+                        "v-model:value": "这是内容"
+                    }
+                }
+            ]
+        }
+    },
+    "data": {},
+    "methods": {
+        "onAddTag": {
+            "args": [],
+            "func": "console.log('is json bind click event');"
+        }
+    }
+}

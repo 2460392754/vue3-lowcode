@@ -1,0 +1,27 @@
+{
+    "node": {
+        "type": "ElCard",
+        "props": {},
+        "children": {
+            "default": [
+                {
+                    "type": "ElButton",
+                    "props": {
+                        "type": "primary",
+                        "onClick": "{{methods.onAddTag}}"
+                    },
+                    "children": { "default": "动态生成tag标签" }
+                }
+            ]
+        }
+    },
+    "data": {
+        "btnRef": "eval(window.$vue.ref())"
+    },
+    "methods": {
+        "onAddTag": {
+            "args": [],
+            "func": "{{node.children.default}}.push({'type':'ElTag',props: { type: 'success' },children: { default: '这是标签' }});"
+        }
+    }
+}

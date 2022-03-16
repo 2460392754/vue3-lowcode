@@ -1,0 +1,23 @@
+{
+    "node": {
+        "type": "div",
+        "props": {
+            "className": "isDiv",
+            "style": {
+                "padding": "20px"
+            }
+        },
+        "children": {
+            "default": [
+                {
+                    "type": "ElInput",
+                    "props": {
+                        "type": "primary",
+                        "placeholder": "这是输入框",
+                        "modelValue": "这是内容"
+                    }
+                }
+            ]
+        }
+    }
+}

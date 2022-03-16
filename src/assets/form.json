@@ -1,0 +1,92 @@
+{
+    "node": {
+        "type": "ElCard",
+        "props": {
+            "style": {
+                "margin": "20px",
+                "padding": "20px"
+            }
+        },
+        "children": {
+            "default": [
+                {
+                    "type": "ElForm",
+                    "props": {
+                        "ref": "{{data.formRef}}",
+                        "model": "{{data.formModel}}",
+                        "rules": {
+                            "name": [
+                                {
+                                    "required": true,
+                                    "message": "请输入姓名",
+                                    "trigger": ["blur", "change"]
+                                },
+                                {
+                                    "min": 2,
+                                    "message": "至少输入2位内容",
+                                    "trigger": "blur"
+                                }
+                            ]
+                        }
+                    },
+                    "children": {
+                        "default": [
+                            {
+                                "type": "ElFormItem",
+                                "props": {
+                                    "label": "姓名",
+                                    "prop": "name"
+                                },
+                                "children": {
+                                    "default": [
+                                        {
+                                            "type": "ElInput",
+                                            "props": {
+                                                "placeholder": "请输入姓名",
+                                                "modelValue": "{{data.formModel.name}}",
+                                                "onUpdate:modelValue": "{{methods.onUpdateInput}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "ElFormItem",
+                                "props": {},
+                                "children": {
+                                    "default": [
+                                        {
+                                            "type": "ElButton",
+                                            "props": {
+                                                "type": "primary",
+                                                "onClick": "{{methods.onSubmit}}"
+                                            },
+                                            "children": {
+                                                "default": "表单提交"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+
+    "data": {
+        "formRef": "eval(window.$vue.ref())",
+        "formModel": "eval(window.$vue.reactive({name:''}))"
+    },
+
+    "methods": {
+        "onSubmit": {
+            "args": ["a", "b"],
+            "func": "{{data.formRef}}.value.validate((valid)=>{ if(valid){window.$message.success('验证通过');console.log({{data.formModel}})}else{window.$message.error('验证失败')} })"
+        },
+        "onUpdateInput": {
+            "func": "{{data.formModel.name}} = arguments[0]"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "node": {
+        "type": "ElCard",
+        "props": {},
+        "children": {
+            "default": [
+                {
+                    "type": "ElButton",
+                    "props": { "type": "primary" },
+                    "children": { "default": "这是普通按钮" }
+                },
+                {
+                    "type": "ElCard",
+                    "props": {
+                        "style": {
+                            "margin": "20px"
+                        }
+                    },
+                    "children": {
+                        "default": [
+                            {
+                                "type": "ElButton",
+                                "props": { "type": "success" },
+                                "children": { "default": "这是普通按钮-1" }
+                            },
+                            {
+                                "type": "ElButton",
+                                "props": { "type": "warning" },
+                                "children": { "default": "这是普通按钮-2" }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "ElTag",
+                    "props": { "type": "success" },
+                    "children": { "default": "这是标签" }
+                },
+                {
+                    "type": "ElInput",
+                    "props": {
+                        "placeholder": "这是输入框",
+                        "modelValue": "这是内容"
+                    }
+                }
+            ]
+        }
+    }
+}
